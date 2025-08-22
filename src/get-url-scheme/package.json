@@ -1,0 +1,10 @@
+
+{
+  "name": "get-url-scheme",
+  "version": "1.0.0",
+  "description": "获取小程序URL Scheme的云函数，用于外部跳转",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}
