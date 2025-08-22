@@ -1,17 +1,12 @@
 
-const cloud = require('wx-server-sdk');
-
-cloud.init({
-  env: cloud.DYNAMIC_CURRENT_ENV
-});
-
+// 使用云开发原生能力，不依赖第三方包
 exports.main = async (event, context) => {
   const { appId, path = 'pages/map/map.html' } = event;
   
   try {
     console.log('开始生成URL Scheme:', { appId, path });
     
-    // 获取URL Scheme
+    // 使用云开发原生API获取URL Scheme
     const result = await cloud.openapi.urlscheme.generate({
       jumpWxa: {
         path: path,
