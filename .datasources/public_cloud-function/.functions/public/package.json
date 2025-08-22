@@ -1,0 +1,11 @@
+
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "公共云函数，用于生成小程序 URL Scheme",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}
+  
