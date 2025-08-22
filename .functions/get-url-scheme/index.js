@@ -1,5 +1,5 @@
 
-// 使用云开发原生能力，不依赖第三方包
+// 使用云开发原生能力，不依赖任何第三方包
 exports.main = async (event, context) => {
   const { appId, path = 'pages/map/map.html' } = event;
   
