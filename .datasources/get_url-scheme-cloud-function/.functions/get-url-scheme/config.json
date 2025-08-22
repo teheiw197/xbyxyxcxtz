@@ -1,0 +1,13 @@
+
+{
+  "permissions": {
+    "openapi": [
+      "urlscheme.generate"
+    ]
+  },
+  "security": {
+    "anonymous": true,
+    "loginRequired": false
+  }
+}
+  
