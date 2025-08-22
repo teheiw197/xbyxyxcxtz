@@ -9,6 +9,8 @@ exports.main = async (event, context) => {
   const { appId, path = 'pages/map/map.html' } = event;
   
   try {
+    console.log('开始生成URL Scheme:', { appId, path });
+    
     // 获取URL Scheme
     const result = await cloud.openapi.urlscheme.generate({
       jumpWxa: {
@@ -19,6 +21,8 @@ exports.main = async (event, context) => {
       envVersion: 'release'
     });
     
+    console.log('URL Scheme生成成功:', result);
+    
     return {
       success: true,
       openlink: result.openlink,
@@ -28,8 +32,8 @@ exports.main = async (event, context) => {
     console.error('生成URL Scheme失败:', error);
     return {
       success: false,
-      error: error.errMsg || '生成跳转链接失败'
+      error: error.errMsg || '生成跳转链接失败',
+      code: error.errCode
     };
   }
 };
-    

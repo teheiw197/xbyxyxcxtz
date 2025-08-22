@@ -4,6 +4,6 @@
     "openapi": [
       "urlscheme.generate"
     ]
-  }
+  },
+  "timeout": 10
 }
-    
