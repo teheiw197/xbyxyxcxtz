@@ -1,0 +1,8 @@
+
+{
+  "name": "get-url-scheme",
+  "version": "1.0.0",
+  "description": "获取小程序URL Scheme的云函数，不依赖第三方node_modules",
+  "main": "index.js"
+}
+  
