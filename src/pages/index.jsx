@@ -56,18 +56,14 @@ export default function WeappRedirectPage(props) {
       const result = await props.$w.cloud.callFunction({
         name: 'get-url-scheme',
         data: {
-          action: 'getUrlScheme',
           appId: config.appId,
           path: config.path
         }
       });
-      if (result && result.code === 0 && result.data && result.data.openlink) {
-        // 成功获取跳转链接
-        setTimeout(() => {
-          window.location.href = result.data.openlink;
-        }, 500);
+      if (result && result.success && result.openlink) {
+        window.location.href = result.openlink;
       } else {
-        throw new Error(result.message || '获取跳转链接失败');
+        throw new Error(result.error || '获取跳转链接失败');
       }
     } catch (err) {
       console.error('跳转失败:', err);

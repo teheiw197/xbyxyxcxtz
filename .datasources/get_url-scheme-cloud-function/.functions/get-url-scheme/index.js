@@ -1,10 +1,12 @@
 
 const cloud = require('wx-server-sdk');
 
+// 初始化云开发
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
 });
 
+// 云函数入口函数
 exports.main = async (event, context) => {
   const { action, appId, path = 'pages/map/map.html' } = event;
   
@@ -33,12 +35,11 @@ exports.main = async (event, context) => {
     // 调用微信开放接口生成 URL Scheme
     const result = await cloud.openapi.urlscheme.generate({
       jumpWxa: {
-        path: path,
-        query: ''
+        path: path, // 小程序页面路径
+        query: ''   // 可选的查询参数
       },
       isExpire: true,
-      expireTime: expireTime,
-      envVersion: 'release'
+      expireTime: expireTime
     });
     
     // 返回成功结果
@@ -48,7 +49,7 @@ exports.main = async (event, context) => {
       data: {
         openlink: result.openlink,
         expireTime: expireTime,
-        appId: appId
+        ghId: 'gh_c82060fba1d1' // 小程序原始账号ID
       }
     };
     

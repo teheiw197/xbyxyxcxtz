@@ -6,8 +6,7 @@
     ]
   },
   "security": {
-    "anonymous": true,
-    "loginRequired": false
+    "anonymous": true
   }
 }
   

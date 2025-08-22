@@ -2,7 +2,7 @@
 {
   "name": "get-url-scheme",
   "version": "1.0.0",
-  "description": "获取小程序URL Scheme的云函数，支持action=getUrlScheme调用",
+  "description": "获取小程序URL Scheme的云函数，支持生成带过期时间的跳转链接",
   "main": "index.js",
   "dependencies": {
     "wx-server-sdk": "latest"
